@@ -8,7 +8,7 @@
                   <table *ngIf="listPacientes.length > 0" class="table table-striped mt-3">
                       <thead>
                         <tr>
-                          <th scope="col">apellido Paterno</th>
+                          <th scope="col">Apellido Paterno</th>
                           <th scope="col">Apellido Materno</th>
                           <th scope="col">Nombres</th>
                           <th scope="col">Edad</th>
@@ -22,6 +22,7 @@
                           <td>{{ paciente.nombres }}</td>
                           <td>{{ paciente.edad }}</td>
                           <td>
+                              <i [routerLink]="['/datosPaciente', paciente._id]" class="fas fa-glasses"></i>
                               <i [routerLink]="['/editarPaciente', paciente._id]" class="fas fa-edit text-primary"></i>
                               <i (click)="eliminarPaciente(paciente._id)" class="fas fa-trash text-danger"></i>
                           </td>

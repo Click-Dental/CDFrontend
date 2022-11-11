@@ -7,15 +7,13 @@ import { PacienteService } from 'src/app/services/paciente.service';
 
 
 @Component({
-  selector: 'app-registrar-paciente',
-  templateUrl: './registrar-paciente.component.html',
-  styleUrls: ['./registrar-paciente.component.css'],
-  
+  selector: 'app-historial-paciente',
+  templateUrl: './historial-paciente.component.html',
+  styleUrls: ['./historial-paciente.component.css']
 })
-export class RegistrarPacienteComponent implements OnInit {
-  
+export class HistorialPacienteComponent implements OnInit {
   pacienteForm: FormGroup;
-  titulo = 'Registrar paciente';
+  titulo = 'Mostrar paciente';
   id: string | null;
   
   constructor(private fb: FormBuilder,
@@ -82,13 +80,13 @@ export class RegistrarPacienteComponent implements OnInit {
     if(this.id !== null){
       this._pacienteService.editarPaciente(this.id, PACIENTE).subscribe(data => {
         this.toastr.success('El paciente fue actualizado con exito!', 'Paciente Actualizado!');
-        this.router.navigate(['/listaPacientes']);
+        this.router.navigate(['/']);
       })
     } else {
       console.log(PACIENTE);
       this._pacienteService.guardarPaciente(PACIENTE).subscribe(data => {
       this.toastr.success('El paciente fue registrado con exito!', 'Paciente Registrado!');
-      this.router.navigate(['/listaPacientes']);
+      this.router.navigate(['/']);
       }, error => {
       console.log(error);
       this.pacienteForm.reset();
