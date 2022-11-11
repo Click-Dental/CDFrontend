@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 import { ListaPacientesComponent } from './components/lista-pacientes/lista-pacientes.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { HistorialPacienteComponent } from './components/historial-paciente/historial-paciente.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { LandingComponent } from './components/landing/landing.component';
     AppComponent,
     RegistrarPacienteComponent,
     ListaPacientesComponent,
-    LandingComponent
+    LandingComponent,
+    HistorialPacienteComponent
   ],
   imports: [
     BrowserModule,

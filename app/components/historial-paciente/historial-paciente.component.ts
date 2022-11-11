@@ -13,7 +13,7 @@ import { PacienteService } from 'src/app/services/paciente.service';
 })
 export class HistorialPacienteComponent implements OnInit {
   pacienteForm: FormGroup;
-  titulo = 'Mostrar paciente';
+  titulo = 'Registrar paciente';
   id: string | null;
   
   constructor(private fb: FormBuilder,
@@ -80,13 +80,13 @@ export class HistorialPacienteComponent implements OnInit {
     if(this.id !== null){
       this._pacienteService.editarPaciente(this.id, PACIENTE).subscribe(data => {
         this.toastr.success('El paciente fue actualizado con exito!', 'Paciente Actualizado!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/listaPacientes']);
       })
     } else {
       console.log(PACIENTE);
       this._pacienteService.guardarPaciente(PACIENTE).subscribe(data => {
       this.toastr.success('El paciente fue registrado con exito!', 'Paciente Registrado!');
-      this.router.navigate(['/']);
+      this.router.navigate(['/listaPacientes']);
       }, error => {
       console.log(error);
       this.pacienteForm.reset();

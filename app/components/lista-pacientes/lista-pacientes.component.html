@@ -22,7 +22,7 @@
                           <td>{{ paciente.nombres }}</td>
                           <td>{{ paciente.edad }}</td>
                           <td>
-                              <i [routerLink]="['/datosPaciente', paciente._id]" class="fas fa-glasses"></i>
+                              <i [routerLink]="['/historialPaciente', paciente._id]" class="fas fa-glasses"></i>
                               <i [routerLink]="['/editarPaciente', paciente._id]" class="fas fa-edit text-primary"></i>
                               <i (click)="eliminarPaciente(paciente._id)" class="fas fa-trash text-danger"></i>
                           </td>
