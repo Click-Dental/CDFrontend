@@ -120,7 +120,7 @@ export class Paciente{
         this.observaciones = observaciones;
         this.motivoConsulta = motivoConsulta;
         this.examenClinico = examenClinico;
-        this.diagnostico = problemaTratamiento;
+        this.diagnostico = diagnostico;
 
     }
 }

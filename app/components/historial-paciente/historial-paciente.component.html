@@ -1,56 +1,36 @@
 <div class="container mt-5">
     <div class="row">
-        <div>
+        <div class="">
             <div class="card">
                 <div class="card-body text-center">
-                    <span class="titulo"> Historial Paciente </span>
-                    <form class="mt-3" [formGroup]="pacienteForm" (ngSubmit)="agregarPaciente()">
+                    <span class="titulo"> Historial </span>
+                    <form class="mt-3" [formGroup]="pacienteForm">
                         <div class="container">
                             <div class="row align-items-start">
                         <div class="col mb-3" id="datosPersonales">
                             <h5>DATOS PERSONALES</h5>
                             <span>NHC:</span>
-                            <input type="text" formControlName="nhc" class="form-control form-control-lg" placeholder="NHC">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('nhc')?.hasError('required') && pacienteForm.get('nhc')?.touched">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
-                            </div>
+                            <input formControlName="nhc" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('nhc')"> </div>
                             <span>Código:</span>
-                            <input type="text" formControlName="codigo" class="form-control form-control-lg" placeholder="Código">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('codigo')?.hasError('required') && pacienteForm.get('codigo')?.touched">
-                                <!-- <span>El apellido <strong>es obligatorio</strong></span> -->
-                            </div>
+                            <input type="text" formControlName="codigo" class="form-control form-control-lg">
+                            <div  *ngIf="pacienteForm.get('codigo')"> </div>
                             <span>Apellido Paterno:</span>
-                            <input type="text" formControlName="apellidoPaterno" class="form-control form-control-lg" placeholder="Apellido Paterno">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('apellidoPaterno')?.hasError('required') && pacienteForm.get('apellidoPaterno')?.touched">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
-                            </div>
+                            <input type="text" formControlName="apellidoPaterno" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('apellidoPaterno')"></div>
                             <span>Apellido Materno:</span>
-                            <input type="text" formControlName="apellidoMaterno" class="form-control form-control-lg"
-                                placeholder="Apellido Materno">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('apellidoMaterno')?.hasError('required') && pacienteForm.get('apellidoMaterno')?.touched">
-                                <!-- <span>El apellido <strong>es obligatorio</strong></span> -->
+                            <input type="text" formControlName="apellidoMaterno" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('apellidoMaterno')">
                             </div>
                             <span>Nombres:</span>
-                            <input type="text" formControlName="nombres" class="form-control form-control-lg" placeholder="Nombres">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('nombres')?.hasError('required') && pacienteForm.get('nombres')?.touched">
-                                <!-- <span>El nombre <strong>es obligatorio</strong></span> -->
-                            </div>
+                            <input type="text" formControlName="nombres" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('nombres')"> </div>
                             <span>Edad:</span>
-                            <input type="number" formControlName="edad" class="form-control form-control-lg" placeholder="Edad">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('edad')?.hasError('required') && pacienteForm.get('edad')?.touched">
-                                <!-- <span>La edad <strong>es obligatoria</strong></span> -->
-                            </div>
+                            <input type="number" formControlName="edad" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('edad')">                            </div>
                             <span>Sexo:</span>
-                            <input type="string" formControlName="sexo" class="form-control form-control-lg" placeholder="Sexo">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('sexo')?.hasError('required') && pacienteForm.get('sexo')?.touched">
-                                <!-- <span>El nombre <strong>es obligatorio</strong></span> -->
+                            <input type="string" formControlName="sexo" class="form-control form-control-lg">
+                            <div *ngIf="pacienteForm.get('sexo')">
                             </div>
                             <span>Lugar de Nacimiento:</span>
                             <input type="text" formControlName="lugarNacimiento" class="form-control form-control-lg" placeholder="Lugar de Nacimiento">
@@ -260,8 +240,7 @@
                         </div>
                     </div></div>
                         <div class="mb-3">
-                            <button routerLink="/listaPacientes" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                            <button type="submit" [disabled]="pacienteForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                            <button routerLink="/listaPacientes" class="btn btn-success btn-lg float-end">ACEPTAR</button>
                         </div>
                     </form>
                 </div>
@@ -269,40 +248,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="card">
-                <div class="card-body text-center">
-                    <span class="titulo"> Paciente </span>
-                    <table *ngIf="listPacientes.length > 0" class="table table-striped mt-3">
-                        <thead>
-                          <tr>
-                            <th scope="col">Apellido Paterno</th>
-                            <th scope="col">Apellido Materno</th>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let paciente of listPacientes">
-                            <td>{{ paciente.apellidoPaterno }}</td>
-                            <td>{{ paciente.apellidoMaterno }}</td>
-                            <td>{{ paciente.nombres }}</td>
-                            <td>{{ paciente.edad }}</td>
-                            <td>
-                                <i [routerLink]="['/editarPaciente', paciente._id]" class="fas fa-edit text-primary"></i>
-                                <i (click)="eliminarPaciente(paciente._id)" class="fas fa-trash text-danger"></i>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listPacientes.length == 0">No hay datos para mostrar</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-   -->

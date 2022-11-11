@@ -24,10 +24,18 @@ export class RegistrarPacienteComponent implements OnInit {
               private _pacienteService: PacienteService,
               private aRouter: ActivatedRoute) { 
     this.pacienteForm = this.fb.group({
+      nhc: ['', Validators.required],
+      codigo: ['', Validators.required],
       apellidoPaterno: ['', Validators.required],
       apellidoMaterno: ['', Validators.required],
       nombres: ['', Validators.required],
       edad: ['', Validators.required],
+      sexo: ['', Validators.required],
+      lugarNacimiento: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
+      ocupacion: ['', Validators.required],
+      direccion: ['', Validators.required],
+      celular: ['', Validators.required],
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
@@ -102,10 +110,44 @@ export class RegistrarPacienteComponent implements OnInit {
       this.titulo = 'Editar paciente';
       this._pacienteService.obtenerPaciente(this.id).subscribe(data => {
         this.pacienteForm.setValue({
+          nhc: data.nhc,
+          codigo: data.codigo,
           apellidoPaterno: data.apellidoPaterno,
           apellidoMaterno: data.apellidoMaterno,
           nombres: data.nombres,
           edad: data.edad,
+          sexo: data.sexo,
+          lugarNacimiento: data.lugarNacimiento,
+          fechaNacimiento: data.fechaNacimiento,
+          ocupacion: data.ocupacion,
+          direccion: data.direccion,
+          celular: data.celular,
+          antecedentesPatologicosFamiliares: data.antecedentesPatologicosFamiliares,
+          antecedentesPatologicosPersonales: data.antecedentesPatologicosPersonales,
+          atm: data.atm,
+          ganglioslinfaticos: data.ganglioslinfaticos,
+          respirador: data.respirador,
+          otrosExamenExtraOral: data.otrosExamenExtraOral,
+          labios: data.labios,
+          lengua: data.lengua,
+          paladar: data.paladar,
+          pisoDeLaBoca: data.pisoDeLaBoca,
+          mucosaYugal: data.mucosaYugal,
+          encias: data.encias,
+          fechaUltimaVisita: data.fechaUltimaVisita,
+          habitos: data.habitos,
+          protesis: data.protesis,
+          cepillo: data.cepillo,
+          hilo: data.hilo,
+          enjuague: data.enjuague,
+          frecuenciaCepillado: data.frecuenciaCepillado,
+          sangreEncias: data.sangreEncias,
+          higieneDental: data.higieneDental,
+          problemaTratamiento: data.problemaTratamiento,
+          observaciones: data.observaciones,
+          motivoConsulta: data.motivoConsulta,
+          examenClinico: data.examenClinico,
+          diagnostico: data.diagnostico,
         })
       })
     }
