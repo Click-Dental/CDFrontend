@@ -13,6 +13,8 @@ import { RegistrarPacienteComponent } from './components/registrar-paciente/regi
 import { ListaPacientesComponent } from './components/lista-pacientes/lista-pacientes.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { HistorialPacienteComponent } from './components/historial-paciente/historial-paciente.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HistorialPacienteComponent } from './components/historial-paciente/hist
     RegistrarPacienteComponent,
     ListaPacientesComponent,
     LandingComponent,
-    HistorialPacienteComponent
+    HistorialPacienteComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ import { ListaPacientesComponent } from './components/lista-pacientes/lista-paci
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { HistorialPacienteComponent } from './components/historial-paciente/historial-paciente.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: 'inicio', component: LandingComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'listaPacientes', component: ListaPacientesComponent },
   { path: 'registrarPaciente', component: RegistrarPacienteComponent },
   { path: 'editarPaciente/:id', component: RegistrarPacienteComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
