@@ -1,0 +1,51 @@
+<header>
+    <div class="header" >
+      <a id="u-logo">
+        <img src="https://lh3.googleusercontent.com/YMaeKSq7BVlAiViGxLPEN2_QhcaAa7lIvOthnfk_YVmAFaT15dXptn9-WO0iGA2jqXAlgSaC2frkuX2QZvM0zeRcFkQU43EZi113VoEqmfPoTP-J3PxqR-WxQWf9aG5-5MHnt7GgqkUhu1BQ1wzLxWWveWMCxP8X3aNE7MiqbJhucMIrnMK_WBh5Y1VLVofRAizNTuE9m2ZfDse03N98xp9fa9bUMowKhm2VwbKLjm98Vwk6rz20jhmaNd5WxUebTtmiveObfNx2np5SxV3YhgeGSNnpTgGxZlw5D0EI5uhfpi6frIML5UPph5u4_L3O6Z1VjQ01yxydJEESjdc8KbAypo0PP9UC1ftNmq-e1rPPgpRI9oZ2YmVnFjSvDEoLp11-F8_yUZIlY2KXaRsUBGXpJn1Wwm8sSobGDfUyRNvpARFQRe3XTBsklVI01SY9-VaxFSp0dJft0PcWOYvJ3QUopThRPdy96F6CU_lrff9FPaj8_EhDtEDFr4H6YtpDBBpO5QcjcVJ6qfKJNcP5x3pQN9vT3xZNvygy0Srikpi5UefLLLR0vhgWLMKAtIi9E71k2f7KO8IsXKzuuODcj60zFmb-yEEVQtoxJTRi8KzcaRZDTGJzDBcts_69vNF_EDZvn0Pp-w7EV9G_kgyDxO5bQ-UfAzhPsQ4W0k7AQ6tKo4NO-OMWi-rni20jYKX06rxqR_R20itgJhQUKhDijJXwC9B_hdVOI0ZhnaBq1uzNOzxFHe6FM3QCWdoyQ5ONb0H1CjlJl9YsqRmgt3vX4axLGNDBNFJb-n78Y_gVZbIQptxVBWyJ5b1r7CqUBFUQdZ8CDlJWKZoCZh84Ni_jOhHMG-WwyHBVS7bwM6LIwGHbWwvhqSMGQxNPQGgx4e2EYHR1cG0VFI1-gjXztt_4GRtgVQSVNKELBPNdbHX91xgIcBvV=w892-h461-no?authuser=0" width="200px" height="100px"> </a>
+      <div class="header-right">
+        
+        <a href="inicio" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+          <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+        </svg></a>
+      </div>
+    </div>
+  
+  </header>
+  
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">DENTISTAS CLÍNICA</span>
+                    <button class="btn btn-success float-end" routerLink="/registrarDentista">NUEVO</button>
+                    <table *ngIf="listDentistas.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Especialidad</th>
+                            <th scope="col">...</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let dentista of listDentistas">
+                            <td>{{ dentista.nombre }}</td>
+                            <td>{{ dentista.especialidad }}</td>
+                            <td>{{ dentista.listaPacientes }}</td>
+                            <td>
+                                <i [routerLink]="['/', dentista._id]" class="fas fa-eye"></i>
+                                <i [routerLink]="['/editarDentista', dentista._id]" class="fas fa-edit text-primary"></i>
+                                <i (click)="eliminarDentista(dentista._id)" class="fas fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listDentistas.length == 0">No hay dentistas para mostrar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
