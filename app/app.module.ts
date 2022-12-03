@@ -15,6 +15,8 @@ import { LandingComponent } from './components/landing/landing.component';
 import { HistorialPacienteComponent } from './components/historial-paciente/historial-paciente.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ListaDentistasComponent } from './components/lista-dentistas/lista-dentistas.component';
+import { RegistrarDentistaComponent } from './components/registrar-dentista/registrar-dentista.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SignupComponent } from './components/signup/signup.component';
     LandingComponent,
     HistorialPacienteComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ListaDentistasComponent,
+    RegistrarDentistaComponent
   ],
   imports: [
     BrowserModule,

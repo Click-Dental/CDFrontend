@@ -13,13 +13,28 @@
                             <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
                             <div class="text-danger"
                                 *ngIf="dentistaForm.get('nombre')?.hasError('required') && dentistaForm.get('nombre')?.touched">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
                             </div>
                             <span>Especialidad:</span>
-                            <input type="text" formControlName="especialidad" class="form-control form-control-lg" placeholder="Especialidad">
-                            <div class="text-danger"
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="especialidad" formControlName="especialidad" value="General" >
+                                    <label for="radio-2" class="radio-label"> General</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="especialidad" formControlName="especialidad" value="Odontopediatria" >
+                                    <label for="radio-2" class="radio-label"> Odontopediatria</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="especialidad" formControlName="especialidad" value="Ortodoncia" >
+                                    <label for="radio-2" class="radio-label"> Ortodoncia</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="especialidad" formControlName="especialidad" value="Periodoncia" >
+                                    <label for="radio-2" class="radio-label"> Periodoncia</label>
+                                </div>
+                                <div class="text-danger"
                                 *ngIf="dentistaForm.get('especialidad')?.hasError('required') && dentistaForm.get('especialidad')?.touched">
-                                <!-- <span>El apellido <strong>es obligatorio</strong></span> -->
+                            </div>
                             </div>
                             <!-- <span>Lista de Pacientes:</span>
                             <input type="text" formControlName="apellidoPaterno" class="form-control form-control-lg" placeholder="Apellido Paterno">

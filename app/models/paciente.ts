@@ -10,16 +10,16 @@ export class Paciente{
     edad: number;
     sexo: string;
     lugarNacimiento: string;
-    fechaNacimiento: string;
+    fechaNacimiento: Date;
     ocupacion: string;
     direccion: string;
     celular: string;
     //
     antecedentesPatologicosFamiliares: string;
-    antecedentesPatologicosPersonales: string[];
+    antecedentesPatologicosPersonales: string;
     atm: string;
     ganglioslinfaticos: string;
-    respirador: string[];
+    respirador: string;
     otrosExamenExtraOral: string;
     labios: string;
     lengua: string;
@@ -28,7 +28,7 @@ export class Paciente{
     mucosaYugal: string;
     encias: string;
     fechaUltimaVisita: Date;
-    habitos: string[];
+    habitos: string;
     protesis: string;
     //
     cepillo: string;
@@ -36,7 +36,7 @@ export class Paciente{
     enjuague: string;
     frecuenciaCepillado: string;
     sangreEncias: string;
-    higieneDental: string[];
+    higieneDental: string;
     problemaTratamiento: string;
     //
     observaciones: string;
@@ -50,16 +50,16 @@ export class Paciente{
         edad: number,
         sexo: string,
         lugarNacimiento: string,
-        fechaNacimiento: string,
+        fechaNacimiento: Date,
         ocupacion: string,
         direccion: string,
         celular: string,
         fechaCreacion: Date,
         antecedentesPatologicosFamiliares: string,
-        antecedentesPatologicosPersonales: string[],
+        antecedentesPatologicosPersonales: string,
         atm: string,
         ganglioslinfaticos: string,
-        respirador: string[],
+        respirador: string,
         otrosExamenExtraOral: string,
         labios: string,
         lengua: string,
@@ -68,14 +68,14 @@ export class Paciente{
         mucosaYugal: string,
         encias: string,
         fechaUltimaVisita: Date,
-        habitos: string[],
+        habitos: string,
         protesis: string,
         cepillo: string,
         hilo: string,
         enjuague: string,
         frecuenciaCepillado: string,
         sangreEncias: string,
-        higieneDental: string[],
+        higieneDental: string,
         problemaTratamiento: string,
         observaciones: string,
         motivoConsulta: string,

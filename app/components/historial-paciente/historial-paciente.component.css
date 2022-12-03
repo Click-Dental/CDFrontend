@@ -1,4 +1,7 @@
 input{
     pointer-events:none;
-
+    border-bottom: 1px solid #39c;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
 }

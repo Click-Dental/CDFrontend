@@ -47,10 +47,18 @@
                                 <!-- <span>La edad <strong>es obligatoria</strong></span> -->
                             </div>
                             <span>Sexo:</span>
-                            <input type="string" formControlName="sexo" class="form-control form-control-lg" placeholder="Sexo">
-                            <div class="text-danger"
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="sexo" formControlName="sexo" value="Masculino" >
+                                    <label for="radio-2" class="radio-label"> Masculino</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="sexo" formControlName="sexo" value="Femenino" >
+                                    <label for="radio-3" class="radio-label"> Femenino</label>
+                                </div>
+                                <div class="text-danger"
                                 *ngIf="pacienteForm.get('sexo')?.hasError('required') && pacienteForm.get('sexo')?.touched">
-                                <!-- <span>El nombre <strong>es obligatorio</strong></span> -->
+                            </div>
                             </div>
                             <span>Lugar de Nacimiento:</span>
                             <input type="text" formControlName="lugarNacimiento" class="form-control form-control-lg" placeholder="Lugar de Nacimiento">
@@ -91,14 +99,64 @@
                             <span>Antecedentes Patológico Familiares:</span>
                             <input type="text" formControlName="antecedentesPatologicosFamiliares" class="form-control form-control-lg" placeholder="Antecedentes Patológico Familiares">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('antecedentesPatologicosFamiliares')">
+                            *ngIf="pacienteForm.get('antecedentesPatologicosFamiliares')?.hasError('required') && pacienteForm.get('antecedentesPatologicosFamiliares')?.touched">
                                 <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
                             </div>
-                            <span>Antecedentes Patológico Personales:</span>
-                            <input type="text" formControlName="antecedentesPatologicosPersonales" class="form-control form-control-lg" placeholder="Antecedentes Patológico Personales">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('antecedentesPatologicosPersonales')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <span>Antecedentes Patológico Personales:</span>                        
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Anemia" >
+                                    <label for="checkbox-3" class="checkbox-label">Anemia</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Asma" >
+                                    <label for="checkbox-3" class="checkbox-label">Asma</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Cardiopatias" >
+                                    <label for="checkbox-3" class="checkbox-label">Cardiopatias</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Diabetes" >
+                                    <label for="checkbox-3" class="checkbox-label">Diabetes</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="ProblemasRenales" >
+                                    <label for="checkbox-3" class="checkbox-label">Problemas renales</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="EnfGastrica" >
+                                    <label for="checkbox-3" class="checkbox-label">Enf. Gástrica</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Epilepsia" >
+                                    <label for="checkbox-3" class="checkbox-label">Epilepsia</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Hepatitis" >
+                                    <label for="checkbox-3" class="checkbox-label">Hepatitis</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Hipertensión" >
+                                    <label for="checkbox-3" class="checkbox-label">Hipertensión</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="ProblemasSang" >
+                                    <label for="checkbox-3" class="checkbox-label">Problemas de coagulación sanguínea</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="Tuberculosis" >
+                                    <label for="checkbox-3" class="checkbox-label">Tuberculosis</label>
+                                </div>
+                                <div class="checkbox inline">
+                                    <input type="radio" id="checkbox-2" name="antecedentesPatologicosPersonales" formControlName="antecedentesPatologicosPersonales" value="SIDA" >
+                                    <label for="checkbox-3" class="checkbox-label">SIDA</label>
+                                </div>
+
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('antecedentesPatologicosPersonales')?.hasError('required') && pacienteForm.get('antecedentesPatologicosPersonales')?.touched">
+
+                            </div>
                             </div>
                         </div>
 
@@ -107,155 +165,206 @@
                             <span>ATM:</span>
                             <input type="text" formControlName="atm" class="form-control form-control-lg" placeholder="ATM">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('atm')">
+                            *ngIf="pacienteForm.get('atm')?.hasError('required') && pacienteForm.get('atm')?.touched">
+
                                 <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
                             </div>
                             <span>Ganglios Linfáticos:</span>
                             <input type="text" formControlName="ganglioslinfaticos" class="form-control form-control-lg" placeholder="Ganglios Linfáticos">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('ganglioslinfaticos')">
+                            *ngIf="pacienteForm.get('ganglioslinfaticos')?.hasError('required') && pacienteForm.get('ganglioslinfaticos')?.touched">
                                 <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
                             </div>
                             <span>Respirador:</span>
-                            <input type="text" formControlName="respirador" class="form-control form-control-lg" placeholder="Respirador">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('respirador')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="respirador" formControlName="respirador" value="Nasal" >
+                                    <label for="radio-2" class="radio-label"> Nasal</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="respirador" formControlName="respirador" value="Bucal" >
+                                    <label for="radio-3" class="radio-label"> Bucal</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="respirador" formControlName="respirador" value="Buconasal" >
+                                    <label for="radio-3" class="radio-label"> Buconasal</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('respirador')?.hasError('required') && pacienteForm.get('respirador')?.touched">
+                                </div>
                             </div>
                             <span>Otros:</span>
                             <input type="text" formControlName="otrosExamenExtraOral" class="form-control form-control-lg" placeholder="Otros">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('otrosExamenExtraOral')">
+                            *ngIf="pacienteForm.get('otrosExamenExtraOral')?.hasError('required') && pacienteForm.get('otrosExamenExtraOral')?.touched">
                                 <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
                             </div>
                             <h5>EXAMEN INTRA ORAL</h5>
                             <span>Labios:</span>
                             <input type="text" formControlName="labios" class="form-control form-control-lg" placeholder="Labios">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('labios')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('labios')?.hasError('required') && pacienteForm.get('labios')?.touched">
                             </div>
                             <span>Lengua:</span>
                             <input type="text" formControlName="lengua" class="form-control form-control-lg" placeholder="Lengua">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('lengua')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('lengua')?.hasError('required') && pacienteForm.get('lengua')?.touched">
                             </div>
                             <span>Paladar:</span>
                             <input type="text" formControlName="paladar" class="form-control form-control-lg" placeholder="Paladar">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('paladar')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('paladar')?.hasError('required') && pacienteForm.get('paladar')?.touched">
                             </div>
                             <span>Piso de la boca:</span>
                             <input type="text" formControlName="pisoDeLaBoca" class="form-control form-control-lg" placeholder="Piso de la boca">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('pisoDeLaBoca')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('pisoDeLaBoca')?.hasError('required') && pacienteForm.get('pisoDeLaBoca')?.touched">
                             </div>
                             <span>Mucosa Yugal:</span>
                             <input type="text" formControlName="mucosaYugal" class="form-control form-control-lg" placeholder="Mucosa Yugal">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('mucosaYugal')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('mucosaYugal')?.hasError('required') && pacienteForm.get('mucosaYugal')?.touched">
                             </div>
                             <span>Encias:</span>
                             <input type="text" formControlName="encias" class="form-control form-control-lg" placeholder="Encias">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('encias')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('encias')?.hasError('required') && pacienteForm.get('encias')?.touched">
                             </div>
                             <span>Fecha última visita:</span>
                             <input type="date" formControlName="fechaUltimaVisita" class="form-control form-control-lg" placeholder="Fecha última visita">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('fechaUltimaVisita')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('fechaUltimaVisita')?.hasError('required') && pacienteForm.get('fechaUltimaVisita')?.touched">
                             </div>
                             <span>Hábitos:</span>
                             <input type="text" formControlName="habitos" class="form-control form-control-lg" placeholder="Hábitos">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('habitos')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('habitos')?.hasError('required') && pacienteForm.get('habitos')?.touched">
                             </div>
                             <span>Prótesis:</span>
-                            <input type="text" formControlName="protesis" class="form-control form-control-lg" placeholder="Prótesis">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('protesis')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="protesis" formControlName="protesis" value="Sí" >
+                                    <label for="radio-2" class="radio-label"> Sí</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="protesis" formControlName="protesis" value="No" >
+                                    <label for="radio-3" class="radio-label"> No</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('protesis')?.hasError('required') && pacienteForm.get('protesis')?.touched">
+                            </div>
                             </div>
                           
                         </div>
                         <div class="col mb-3" id="observaciones">
                             <h5>ANTECEDENTES BUCODENTALES</h5>
                             <span>Cepillo:</span>
-                            <input type="text" formControlName="cepillo" class="form-control form-control-lg" placeholder="Cepillo">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('cepillo')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="cepillo" formControlName="cepillo" value="Sí" >
+                                    <label for="radio-2" class="radio-label"> Sí</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="cepillo" formControlName="cepillo" value="No" >
+                                    <label for="radio-3" class="radio-label"> No</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('cepillo')?.hasError('required') && pacienteForm.get('cepillo')?.touched">
+                            </div>
                             </div>
                             <span>Hilo:</span>
-                            <input type="text" formControlName="hilo" class="form-control form-control-lg" placeholder="Hilo">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('hilo')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="hilo" formControlName="hilo" value="Sí" >
+                                    <label for="radio-2" class="radio-label"> Sí</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="hilo" formControlName="hilo" value="No" >
+                                    <label for="radio-3" class="radio-label"> No</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('hilo')?.hasError('required') && pacienteForm.get('hilo')?.touched">
+                            </div>
                             </div>
                             <span>Enjuague:</span>
-                            <input type="text" formControlName="enjuague" class="form-control form-control-lg" placeholder="Enjuague">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('enjuague')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="enjuague" formControlName="enjuague" value="Sí" >
+                                    <label for="radio-2" class="radio-label"> Sí</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="enjuague" formControlName="enjuague" value="No" >
+                                    <label for="radio-3" class="radio-label"> No</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('enjuague')?.hasError('required') && pacienteForm.get('enjuague')?.touched">
+                            </div>
                             </div>
                             <span>Frecuencia del cepillado:</span>
                             <input type="text" formControlName="frecuenciaCepillado" class="form-control form-control-lg" placeholder="Frecuencia del cepillado">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('frecuenciaCepillado')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('frecuenciaCepillado')?.hasError('required') && pacienteForm.get('frecuenciaCepillado')?.touched">
                             </div>
                             <span>Durante el cepillado dental sangran las encías:</span>
-                            <input type="text" formControlName="sangreEncias" class="form-control form-control-lg" placeholder="Encías">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('sangreEncias')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="sangreEncias" formControlName="sangreEncias" value="Sí" >
+                                    <label for="radio-2" class="radio-label"> Sí</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="sangreEncias" formControlName="sangreEncias" value="No" >
+                                    <label for="radio-3" class="radio-label"> No</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('sangreEncias')?.hasError('required') && pacienteForm.get('sangreEncias')?.touched">
+                            </div>
                             </div>
                             <span>Higiene Dental:</span>
-                            <input type="text" formControlName="higieneDental" class="form-control form-control-lg" placeholder="...">
-                            <div class="text-danger"
-                                *ngIf="pacienteForm.get('higieneDental')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                            <div class="form-group" class="form-control form-control-lg" >
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="higieneDental" formControlName="higieneDental" value="Buena" >
+                                    <label for="radio-2" class="radio-label"> Buena</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="higieneDental" formControlName="higieneDental" value="Regular" >
+                                    <label for="radio-3" class="radio-label"> Regular</label>
+                                </div>
+                                <div class="radio inline">
+                                    <input type="radio" id="radio-3" name="higieneDental" formControlName="higieneDental" value="Mala" >
+                                    <label for="radio-3" class="radio-label"> Mala</label>
+                                </div>
+                                <div class="text-danger"
+                                *ngIf="pacienteForm.get('higieneDental')?.hasError('required') && pacienteForm.get('higieneDental')?.touched">
+                            </div>
                             </div>
                             <span>Ha tenido algún problema grave en algún tratamiento anterior:</span>
                             <input type="text" formControlName="problemaTratamiento" class="form-control form-control-lg" placeholder="...">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('problemaTratamiento')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('problemaTratamiento')?.hasError('required') && pacienteForm.get('problemaTratamiento')?.touched">
                             </div>
 
                             <h5>OBSERVACIONES</h5>
                             <input type="text" formControlName="observaciones" class="form-control form-control-lg" placeholder="Observaciones">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('observaciones')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('observaciones')?.hasError('required') && pacienteForm.get('observaciones')?.touched">
                             </div>
 
                             <h5>MOTIVO DE LA CONSULTA</h5>
                             <input type="text" formControlName="motivoConsulta" class="form-control form-control-lg" placeholder="Motivo de la consulta">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('motivoConsulta')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('motivoConsulta')?.hasError('required') && pacienteForm.get('motivoConsulta')?.touched">
                             </div>
 
                             <h5>EXAMEN CLÍNICO</h5>
                             <input type="text" formControlName="examenClinico" class="form-control form-control-lg" placeholder="Examen Clínico">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('examenClinico')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('examenClinico')?.hasError('required') && pacienteForm.get('examenClinico')?.touched">
                             </div>
 
                             <h5>DIAGNÓSTICO</h5>
                             <input type="text" formControlName="diagnostico" class="form-control form-control-lg" placeholder="Diagnóstico">
                             <div class="text-danger"
-                                *ngIf="pacienteForm.get('diagnostico')">
-                                <!-- <span>El apellido del paciente <strong>es obligatorio</strong></span> -->
+                                *ngIf="pacienteForm.get('diagnostico')?.hasError('required') && pacienteForm.get('diagnostico')?.touched">
                             </div>
                         </div>
                     </div></div>
