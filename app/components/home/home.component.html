@@ -12,39 +12,27 @@
     </div>
   
   </header>
-  
-  <div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <div class="card">
-                <div class="card-body text-center">
-                    <span class="titulo">DENTISTAS CLÍNICA</span>
-                    <button class="btn btn-success float-end" routerLink="/registrarDentista">NUEVO</button>
-                    <button routerLink="/home" class="btn btn-secondary float-start">VOLVER</button>
 
-                    <table *ngIf="listDentistas.length > 0" class="table table-striped mt-3">
-                        <thead>
-                          <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Especialidad</th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let dentista of listDentistas">
-                            <td>{{ dentista.nombre }}</td>
-                            <td>{{ dentista.especialidad }}</td>
-                            <td>
-                                <i [routerLink]="['/editarDentista', dentista._id]" class="fas fa-edit text-primary"></i>
-                                <i (click)="eliminarDentista(dentista._id)" class="fas fa-trash text-danger"></i>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listDentistas.length == 0">No hay dentistas para mostrar</h5>
-                </div>
+  <body>
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="https://capelliskinclinic.com/wp-content/uploads/2019/10/PACIENTES-I%CC%81CONO-mujer.png" alt="Avatar" style="width:100%">
+                <div class="container">
+              <h4><b>Pacientes</b></h4> 
+              <button type="submit" routerLink="/listaPacientes" class="btn btn-success btn-lg float-center">IR</button>
             </div>
+          </div>
         </div>
-    </div>
-  </div>
-  
+      
+        <div class="column">
+          <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2317/2317929.png" alt="Avatar" style="width:100%">
+                <div class="container">
+              <h4><b>Dentistas</b></h4> 
+              <button type="submit" routerLink="/dentistas" class="btn btn-success btn-lg float-center">IR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>

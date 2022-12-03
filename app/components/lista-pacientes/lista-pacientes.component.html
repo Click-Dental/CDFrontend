@@ -20,18 +20,21 @@
               <div class="card-body text-center">
                   <span class="titulo">LISTADO DE PACIENTES</span>
                   <button class="btn btn-success float-end" routerLink="/registrarPaciente">NUEVO</button>
+                  <button routerLink="/home" class="btn btn-secondary float-start">VOLVER</button>
+
                   <table *ngIf="listPacientes.length > 0" class="table table-striped mt-3">
                       <thead>
                         <tr>
+                          <th scope="col"></th>
                           <th scope="col">Apellido Paterno</th>
                           <th scope="col">Apellido Materno</th>
                           <th scope="col">Nombres</th>
-                          <th scope="col">Edad</th>
-                          <th scope="col"></th>
+                          <th scope="col">Edad</th>  
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let paciente of listPacientes">
+                          <td> <button class="btn btn-outline-primary float-end" routerLink="/registrarPaciente">DERIVAR</button> </td>
                           <td>{{ paciente.apellidoPaterno }}</td>
                           <td>{{ paciente.apellidoMaterno }}</td>
                           <td>{{ paciente.nombres }}</td>
